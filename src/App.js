@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { motion, AnimatePresence } from 'framer-motion'
+import QuizContainer from './components/QuizContainer.js';
+import Quizquestion from './components/Quizquestion';
 
 function App() {
+
+  const [startQuiz, setstartQuiz] = useState(false)
+  const [questions, setquestions] = useState([])
   return (
+    <AnimatePresence>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {
+          startQuiz ? <Quizquestion startquiz={setstartQuiz} questions={questions}/>:
+          <motion.div>
+            <QuizContainer startquiz={setstartQuiz} setquestions={setquestions}/>
+          </motion.div>
+        }
       </header>
     </div>
+    </AnimatePresence>
   );
 }
 

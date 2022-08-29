@@ -1,0 +1,18 @@
+.quiz-btn{
+    border: wheat solid 1px;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    outline: none;
+    margin: 1rem;
+}
+
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
