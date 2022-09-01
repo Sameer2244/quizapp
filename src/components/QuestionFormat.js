@@ -1,12 +1,15 @@
 import React,{useState} from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function QuestionFormat(props) {
 
 
   const options = {
     broder: 'solid 1px #fff',
-    margin: '1rem 0rem',
+    margin: '1rem auto',
     borderRadius: '1rem',
+    width:'70rem',
+    height:'auto',
     padding: '0.5rem',
     cursor:'pointer',
   }
@@ -15,7 +18,7 @@ export default function QuestionFormat(props) {
       <div>
         <h3>{props.questions.question}</h3>
         {
-          props.questions.answers['answer_a'] && <div style={{...options,backgroundColor:props.validationOptions[0] ? 'rgb(50,205,50,0.5)':'rgb(0,0,0,.7)' }} 
+          props.questions.answers['answer_a'] && <motion.div whileHover={{ scale: 1.05 }}  style={{...options,backgroundColor:props.validationOptions[0] ? 'rgb(50,205,50,0.5)':'rgb(0,0,0,.7)' }} 
           onClick={()=>{
             const temp=props.validationOptions;
             temp.splice(0,1,true)
@@ -34,10 +37,10 @@ export default function QuestionFormat(props) {
             
             }}>
             <a>{props.questions.answers['answer_a']}</a>
-          </div>
+          </motion.div>
         }
         {
-          props.questions.answers['answer_b'] && <div style={{...options,backgroundColor:props.validationOptions[1] ? 'rgb(50,205,50,0.5)':'rgb(0,0,0,.7)' }} 
+          props.questions.answers['answer_b'] && <motion.div whileHover={{scale: 1.05  }} style={{...options,backgroundColor:props.validationOptions[1] ? 'rgb(50,205,50,0.5)':'rgb(0,0,0,.7)' }} 
           onClick={()=>{
             const temp=props.validationOptions;
             temp.splice(1,1,true)
@@ -56,10 +59,10 @@ export default function QuestionFormat(props) {
              }
           }}>
             <a>{props.questions.answers['answer_b']}</a>
-          </div>
+          </motion.div>
         }
         {
-          props.questions.answers['answer_c'] && <div style={{...options,backgroundColor:props.validationOptions[2] ? 'rgb(50,205,50,0.5)':'rgb(0,0,0,.7)' }} 
+          props.questions.answers['answer_c'] && <motion.div whileHover={{ scale: 1.05 }} style={{...options,backgroundColor:props.validationOptions[2] ? 'rgb(50,205,50,0.5)':'rgb(0,0,0,.7)' }} 
           onClick={()=>{
             const temp=props.validationOptions;
             temp.splice(2,1,true)
@@ -78,10 +81,10 @@ export default function QuestionFormat(props) {
              }
             }}>
             <a>{props.questions.answers['answer_c']}</a>
-          </div>
+          </motion.div>
         }
         {
-          props.questions.answers['answer_d'] && <div style={{...options,backgroundColor:props.validationOptions[3] ? 'rgb(50,205,50,0.5)':'rgb(0,0,0,.7)' }} 
+          props.questions.answers['answer_d'] && <motion.div whileHover={{ scale: 1.05  }} style={{...options,backgroundColor:props.validationOptions[3] ? 'rgb(50,205,50,0.5)':'rgb(0,0,0,.7)' }} 
           onClick={()=>{
             const temp=props.validationOptions;
             temp.splice(3,1,true)
@@ -101,10 +104,10 @@ export default function QuestionFormat(props) {
              }
           }}>
             <a>{props.questions.answers['answer_d']}</a>
-          </div>
+          </motion.div>
         }
         {
-          props.questions.answers['answer_e'] && <div style={{...options,backgroundColor:props.validationOptions[4] ? 'rgb(50,205,50,0.5)':'rgb(0,0,0,.7)' }} 
+          props.questions.answers['answer_e'] && <motion.div whileHover={{ scale: 1.05  }} style={{...options,backgroundColor:props.validationOptions[4] ? 'rgb(50,205,50,0.5)':'rgb(0,0,0,.7)' }} 
           onClick={()=>{
             const temp=props.validationOptions;
             temp.splice(4,1,true)
@@ -123,10 +126,10 @@ export default function QuestionFormat(props) {
              }
             }}>
             <a>{props.questions.answers['answer_e']}</a>
-          </div>
+          </motion.div>
         }
         {
-          props.questions.answers['answer_f'] && <div style={{...options,backgroundColor:props.validationOptions[5] ? 'rgb(50,205,50,0.5)':'rgb(0,0,0,.7)' }} 
+          props.questions.answers['answer_f'] && <motion.div whileHover={{ scale: 1.05 }} style={{...options,backgroundColor:props.validationOptions[5] ? 'rgb(50,205,50,0.5)':'rgb(0,0,0,.7)' }} 
           onClick={()=>{
             const temp=props.validationOptions;
             temp.splice(5,1,true)
@@ -145,7 +148,7 @@ export default function QuestionFormat(props) {
              }
             }}>
             <a>{props.questions.answers['answer_f']}</a>
-          </div>
+          </motion.div>
         }
       </div>
     </div>

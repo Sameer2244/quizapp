@@ -19,7 +19,7 @@ export default function Result(props) {
     <div>
         <h3>Your score is {(result/10)*100}%</h3>
         <h4>Total Questions: 10</h4>
-        <h4>Currect Answers: {result}</h4>
+        <h4>Correct Answers: {result}</h4>
     </div>
   )
 }
